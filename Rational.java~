@@ -1,0 +1,26 @@
+/* Andy Liang, Jason Dong - Team DysfunctionalJumperCable
+   APCS1 pd5
+   HW 32 -- Irrationality Stops Here
+   2015-11-17 */
+
+public class Rational{
+
+    /*public long numerator;
+    public long denominator;
+
+    public Rational(){
+	numerator = 0;
+	denominator = 1;
+    }
+
+    public Rational(numerator, denominator){
+	try{
+	    denominator = 0;
+	}
+	catch(*/
+
+    public static void main(String[] args){
+	System.out.println(1/0);
+    }
+}
+	    

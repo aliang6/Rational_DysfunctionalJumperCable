@@ -28,6 +28,26 @@ public class Rational{
     public static String toString(double x){
 	return Double.toString(x);
     }
+
+    public double floatValue () {
+	return number;
+    }
+
+    public void multiply ( Rational multiple ) {
+	
+	numerator = numerator * multiple.numerator;
+	denominator = denominator * multiple.denominator;
+	number = number * multiple.number;
+
+    }
+
+    public void divide ( Rational divisor ) {
+	
+	numerator = numerator * divisor.denominator;
+	denominator = denominator * divisor.numerator;
+	number = number / divisor.number;
+
+    }
     
     public static void main(String[] args){
 	Rational x = new Rational();
@@ -36,6 +56,18 @@ public class Rational{
 	System.out.println(toString(x.number));
 	System.out.println(toString(y.number));
 	System.out.println(toString(z.number));
+	System.out.println(x.floatValue());
+	System.out.println(y.floatValue());
+	System.out.println(z.floatValue());
+
+	x.multiply(y);
+
+	System.out.println(y.numerator + "," + y.denominator + "," + y.number);
+
+	z.divide(y);
+
+	System.out.println(y.numerator + "," + y.denominator + "," + y.number);
+
     }
 }
 

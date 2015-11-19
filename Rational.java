@@ -48,6 +48,35 @@ public class Rational{
 	number = number / divisor.number;
 
     }
+
+    public double gcdER(double a, double b){ //Taken from Stats.java and converted to accept double
+	if (a == b) return a;
+	double greater = Stats.max(a,b); //Calls the Stats.java methods
+	double smaller = Stats.min(a,b);
+	if (greater%smaller == 0) return smaller;
+	else {
+	    return gcdER(smaller,greater%smaller);
+	}
+    }
+
+    public void add(Rational object){ //Takes a rational object and adds it to current rational number object
+	this.numerator = this.numerator * object.denominator + object.denominator * this.denominator;
+	this.denominator = this.denominator * object.denominator;
+    }
+
+    public void subtract(Rational object){
+	this.numerator = this.numerator * object.denominator - object.denominator * this.denominator;
+	this.denominator = this.denominator * object.denominator;
+    }
+
+    public double gcd(){
+	return gcdER(this.numerator, this.denominator);
+    }
+
+    public void reduce(){
+	this.numerator /= gcd();
+	this.denominator /= gcd();
+    }
     
     public static void main(String[] args){
 	Rational x = new Rational();

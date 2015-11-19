@@ -111,6 +111,7 @@ public class Rational{
 	Rational x = new Rational();
 	Rational y = new Rational (3.5, 7);
 	Rational z = new Rational (7, 3.5);
+
 	System.out.println(toString(x.number));
 	System.out.println(toString(y.number));
 	System.out.println(toString(z.number));
@@ -125,7 +126,8 @@ public class Rational{
 
 	System.out.println(y.numerator + "," + y.denominator + "," + y.number);
 	System.out.println(x.compareTo(z));
-	System.out.println(y.compareTo(z));
+	System.out.println(z.compareTo(y));
+	System.out.println(y.compareTo(y));
 	System.out.println(gcdstatic(100,4));
 	System.out.println(gcdstatic(125,5));
 

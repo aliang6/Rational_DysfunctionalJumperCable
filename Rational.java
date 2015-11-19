@@ -1,6 +1,6 @@
-/* Andy Liang, Jason Dong - Team DysfunctionalJumperCable
+/* Andy Liang, Stanley Zeng - Team DysfunctionalJumperCable
    APCS1 pd5
-   HW 32 -- Irrationality Stops Here
+   HW 33 -- Do You Even Add, Bro?
    2015-11-17 */
 
 public class Rational{
@@ -78,6 +78,35 @@ public class Rational{
 	this.denominator /= gcd();
     }
     
+    public int compareTo (Rational another) {
+	if (this.floatValue() == another.floatValue() ){
+	    return 0;
+	}
+	    else if (this.floatValue() > another.floatValue() ){
+		return 1;
+	    }
+	    else {
+		return -1;
+	    }
+    }
+    
+    public static int gcdstatic(int a, int b) {
+	int c = 0; //temporarily store the smaller number
+	if ( a < b ) {
+	    a = c;
+	    a = b;
+	    b = c;
+	}
+
+	while (a % b != 0) {
+	    int i = a; //temporarily store a
+	    int f = b; //temporarily store b
+	    a = b; 
+	    b = i % f; //b is remainder of a and b
+	}
+	return b;
+    }
+
     public static void main(String[] args){
 	Rational x = new Rational();
 	Rational y = new Rational (3.5, 7);
@@ -88,7 +117,6 @@ public class Rational{
 	System.out.println(x.floatValue());
 	System.out.println(y.floatValue());
 	System.out.println(z.floatValue());
-
 	x.multiply(y);
 
 	System.out.println(y.numerator + "," + y.denominator + "," + y.number);
@@ -96,6 +124,10 @@ public class Rational{
 	z.divide(y);
 
 	System.out.println(y.numerator + "," + y.denominator + "," + y.number);
+	System.out.println(x.compareTo(z));
+	System.out.println(y.compareTo(z));
+	System.out.println(gcdstatic(100,4));
+	System.out.println(gcdstatic(125,5));
 
     }
 }

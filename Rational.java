@@ -95,6 +95,7 @@ public class Rational{
 	if ( a < b ) {
 	    a = c;
 	    a = b;
+	}
 	    b = c;
 	}
 
@@ -106,6 +107,38 @@ public class Rational{
 	}
 	return b;
     }
+    
+
+ public boolean equals(Object o){
+    this.reduce(); // reduce to get in simplest forms
+    ((Rational) o).reduce();
+     
+    // check for aliasing.
+    boolean retVal = this == o;
+ 
+    
+    if ( !retVal ){
+ 
+	//check to see if input Object is a Rational
+	    retVal = o instanceof Rational
+ 
+		//...and that its state variables match those of this Tile
+		&& this.numerator == ((Rational)o).numerator
+		&& this.denominator == ((Rational)o).denominator;
+	    System.out.println(o);
+	    System.out.println(this);
+	    System.out.println(this.numerator);
+	    System.out.println(((Rational)o).numerator);
+	    System.out.println(this.denominator);
+	    System.out.println(((Rational)o).denominator);
+
+    }
+    return retVal;
+
+}
+
+
+if (greater%smaller == 0) return smaller;
 
     public static void main(String[] args){
 	Rational x = new Rational();
@@ -131,6 +164,11 @@ public class Rational{
 	System.out.println(gcdstatic(100,4));
 	System.out.println(gcdstatic(125,5));
 
+
+	Rational bb = new Rational(1,2);
+	Rational aa = new Rational(2,4);
+
+	System.out.println(aa.equals(bb);
     }
 }
 

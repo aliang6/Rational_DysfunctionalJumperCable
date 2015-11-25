@@ -97,7 +97,7 @@ public class Rational{
 	    a = b;
 	}
 	    b = c;
-	}
+
 
 	while (a % b != 0) {
 	    int i = a; //temporarily store a
@@ -168,7 +168,7 @@ if (greater%smaller == 0) return smaller;
 	Rational bb = new Rational(1,2);
 	Rational aa = new Rational(2,4);
 
-	System.out.println(aa.equals(bb);
+	System.out.println(aa.equals(bb));
     }
 }
 
